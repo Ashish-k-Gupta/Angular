@@ -1,0 +1,118 @@
+<p>data-binding works!</p>
+<div class="parentContainer">
+<div class="row">
+    <div class="col-4">
+        One way data binding from .TS to .HTML
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+<p>data-binding works!</p>
+
+
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+            <div class="col-4 bg-success">
+                interpolation
+                <h4>{{courseName}}</h4>
+                <div>{{inputType}}</div>
+                <input type="text" value={{courseName}} placeholder="Enter Name"/>
+                <input type={{inputType.radio}}/>
+                <input type={{inputType.checkbox}}/>
+                
+            </div>
+         
+        </div>
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+
+<div [ngClass]="allClasses">
+    <h4 [class.bg-danger]="allClasses['bg-danger']">Hey Ashish!</h4>  
+</div>
+<div [ngClass]="{'bg-danger': allClasses['bg-danger']}">
+    <h4>Hey Ashish!</h4>!
+</div>
+
+
+<div>
+    <input [type]="inputType.radio">
+    <input [type]="inputType.checkbox">
+    <input [type]="inputType.text">
+</div>
+
+
+<button 
+  [ngClass]="{
+    'btn-primary': isPrimary,
+    'btn-secondary': !isPrimary,
+    'btn-disabled': isDisabled,
+    'btn-lg': isLarge
+  }"
+  (click)="toggleClass()">
+  Toggle Button Style
+</button>
+
+
+<button class="btn btn-success" (click)='showAlert("Hello, Ashish")'>Alert</button>
+<span (click)="showAlert('this is from Span')">Click Me</span>
+
+<button class="btn" (click)="changeCourseName()">change Course</button>
+
+
+<div class="col-4">
+    <input type="text" [(ngModel)]="courseName" > - {{courseName}}
+</div>
+
+
+<div class="col-5">
+    <textarea name="essay" id="essay" [(ngModel)]='essay' placeholder="write here and see">{{essay}}</textarea>
+    <h1>{{essay}}</h1>
+    <input type="text" value="{{essay}}" />
+</div>
+
+<div class="col-6">
+    <select [(ngModel)]="selectedValue" > <!-- Bind to selectedValue -->
+        <option value="{{selectedValue}}" disabled>{{selectedValue}}</option> <!-- Default option -->
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+        <option value="{{essay}}">{{essay}}</option> <!-- Display essay option -->
+        <option value="{{courseName}}">{{courseName}}</option> <!-- Display course name -->
+    </select>
+</div>
+
+<p>Selected Value: {{ selectedValue }}</p> <!-- Display the currently selected value -->
+
+
+<div class="col">
+    <input type="checkbox" [(ngModel)]="isIndian" placeholder="isIndian">
+</div>
+
+
+<div class="col-8">
+    <h2 style="color: red;">{{firstName()}}</h2>
+</div>
+
+
+<div >
+    <button class="btn btn-primary" (click)="hideAndShow()">{{isButtonVisible}}</button>
+    <article>It's not that it hides or shows the element. 
+        <br>
+        Rather it removes it from it entirely from the DOM and then puts it back in their again.
+    </article>
+    <h6 *ngIf="isVisible" style="color: green">Hey I'm Visible now</h6>
+</div>
+
+</div>
