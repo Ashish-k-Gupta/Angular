@@ -72,3 +72,6 @@ export class DataBindingComponent {
     this.isButtonVisible = this.isButtonVisible === "Hide" ? "Show" : "Hide"
   }
 }
+
+
+
