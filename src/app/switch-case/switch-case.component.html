@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class="days">Put a number between 1 to 7: 
+        <input type="text" [(ngModel)]="dayNumber" placeholder="Number between 1-7"/>
+    </div>        
+    <div class="dayName" style="margin: 1em;">You have selected day
+            
+            @switch (dayNumber) {
+                @case ("1") {
+                    <span>Monday</span>
+                }
+                @case ("2") {
+                    <span>Tuesday</span>
+                }
+                @case ("3") {
+                    <span>Wednessday</span>
+                }
+                @case ("4") {
+                    <span>Thursday</span>
+                }
+                @case ("5") {
+                    <span>Friday</span>
+                }
+                @case ("6") {
+                    <span>Saturday</span>
+                }
+                @case ("7") {
+                    <span>Sunday</span>
+                }
+                @default {
+                    <span style="padding:0.2em 0.1em; color: red;">Please put a valid Input!</span>
+                }
+
+        }
+    </div>
+
+</div>

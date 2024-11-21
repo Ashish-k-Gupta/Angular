@@ -1,23 +1,49 @@
-<h1>Hello, World</h1>
-<!-- 
-<table>
-<thead>
-    
-    <tr>
-        <th class="firstCell">First Company  </th>
-        <th class="secondCell">Second Company</th>
-    </tr>
-</thead>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">Home-Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link active" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="add-emp">Add-Employee</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="emp-list">Employee-List</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="data-binding">Data-Binding</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="routing-examples">Routing-Examples</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="routing-examples">Switch-Case</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+</nav>
 
-        <tbody>
-        <tr>
-            <td><app-add-employee></app-add-employee></td>
-        </tr>
+<h1>Home Page</h1>
+<app-pipe/>
 
-        <tr>
-            <td><app-employee-list></app-employee-list></td>
-        </tr>
-    </tbody>
-</table> -->
 
-<app-data-binding></app-data-binding>
+
+<span class="container">
+  <router-outlet/>
+</span>
+
+
+
+
+
+

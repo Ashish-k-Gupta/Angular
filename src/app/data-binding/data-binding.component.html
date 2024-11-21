@@ -115,4 +115,93 @@
     <h6 *ngIf="isVisible" style="color: green">Hey I'm Visible now</h6>
 </div>
 
+
+<div>
+    <div class="header">
+        <h1>Comparison Component</h1>
+    </div>
+    
+    <input type="text" class="left col-8" placeholder="Input-1" [(ngModel)]="num1">
+    <input type="text" class="right col-8" placeholder="Input-2" [(ngModel)]="num2">
+  
 </div>
+
+
+<div class="dynamicText" *ngIf="num1 == num2">
+    <h3>Here is the magic.</h3>
+</div>
+
+
+
+<div class="checkboxInput">
+    <input type="checkbox" value="true" [(ngModel)]="isChecked" onclick="hideShowCheckbox()" >
+</div>
+<div class="checkboxMagic" *ngIf="isChecked == true">
+    <h4>This is will be hidden or shown based on checkbox input</h4>
+</div>
+
+
+<div class="selectInput">
+    <select [(ngModel)]="selectedCountry">
+        <option value="">select</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+    </select>
+</div>
+
+<div class="basedOnOption" *ngIf="selectedCountry == 'USA'">
+    <h4>If selected USA, only then this text will be visible</h4>
+</div>
+
+<div class="selectCity">
+    <select name="" id="">
+        
+        <option select>Select</option>
+        @for(city of cityArray; track city){
+            <option>{{city}}</option>
+        }@empty {
+           <p>List is empty</p>
+        }
+    </select>
+  
+</div>
+
+<div [class]="borderClasses">
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Roll Number</th>
+                <th>Student Id</th>
+                <th>Present</th>
+                <th>Marks</th>
+            </thead>
+            <tbody>
+                @for (student of studentList; track student.studId){
+                    <tr >
+                        <td>{{student.name}}</td>
+                        <td>{{student.age}}</td>
+                        <td>{{student.rollNum}}</td>
+                        <td>{{student.studId}}</td>
+                        <td [style]="{'background-color': student.isActive ? 'green' : 'red','color': 'white'}">{{student.isActive ? "Present" : "Absent"}}</td>
+                        <td>{{student.marks}}%</td>
+
+                    </tr>
+                }
+               
+            </tbody>
+        </table>
+
+        <button class="btnRed" (click)="changeRed()">Border Red</button>
+        <button class="btnBlue" (click)="changeBlue()">Border Blue</button>
+        <button class="btnGreen" (click)="changeGreen()">Border Green</button>
+</div>
+
+<div class="customCss">
+    <div [style]="customStyle">
+        Hello, World
+    </div>
+</div>
+</div>
+
