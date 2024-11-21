@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .row{
     margin-left: 0.1em;
 }
@@ -49,4 +50,57 @@ table {
 
   .borderBlue{
     border: 1px solid blue;
+=======
+.row{
+    margin-left: 0.1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .btnRed{
+    background-color: red;
+    color: white;
+    padding: 0.2em;
+  }
+  .btnBlue{
+    background-color: blue;
+    color: white;
+    padding: 0.2em;
+  }
+
+  .btnGreen{
+    background-color: green;
+    color: white;
+    padding: 0.2em;
+  }
+
+  .borderRed{
+    border: 1px solid red;
+  }
+
+  .borderGreen{
+    border: 1px solid green;
+  }
+
+  .borderBlue{
+    border: 1px solid blue;
+>>>>>>> master
   }

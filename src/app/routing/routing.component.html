@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="text">
     <article>
         All the buttons in the blue color uses method of <span style="color:green;">dependency injection</span> to route to the different component. 
@@ -24,4 +25,32 @@
 <button class="btn btn-danger setMargin" [routerLink]="['emp-list']">Employee List</button>
 
 
+=======
+<div class="text">
+    <article>
+        All the buttons in the blue color uses method of <span style="color:green;">dependency injection</span> to route to the different component. 
+
+    </article>
+</div>
+
+
+<div class="routingExample">
+    <button class="btn btn-primary setMargin" (click)="routeToAddEmp()">Add Employee</button>
+    <button class="btn btn-primary setMargin" (click)="routeToDataBinding()">Data Bind</button>
+    <button class="btn btn-primary setMargin" (click)="routeToEmpList()">Employee List</button>
+</div>
+
+
+<article>
+    All the buttons in the Red color uses method <span style="color:green;">[routerLink]="['']"</span>  to route to the different component. 
+
+</article>
+
+
+<button class="btn btn-danger setMargin" [routerLink]="['add-emp']">Add Employee</button>
+<button class="btn btn-danger setMargin" [routerLink]="['data-binding']">Data Bind</button>
+<button class="btn btn-danger setMargin" [routerLink]="['emp-list']">Employee List</button>
+
+
+>>>>>>> master
 <app-switch-case/>

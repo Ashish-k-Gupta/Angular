@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .firstCell{
     color: red;
 }
@@ -8,4 +9,16 @@
 
 .parentContainer{
     margin-left: 1em;
+=======
+.firstCell{
+    color: red;
+}
+
+.secondCell{
+    color: blue;
+}
+
+.parentContainer{
+    margin-left: 1em;
+>>>>>>> master
 }

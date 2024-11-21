@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,3 +11,17 @@ import { Component } from '@angular/core';
 export class AddEmployeeComponent {
       
 }
+=======
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-add-employee',
+  standalone: true,
+  imports: [],
+  templateUrl: './add-employee.component.html',
+  styleUrl: './add-employee.component.css'
+})
+export class AddEmployeeComponent {
+      
+}
+>>>>>>> master

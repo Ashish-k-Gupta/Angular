@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p>data-binding works!</p>
 <div class="parentContainer">
 <div class="row">
@@ -205,3 +206,212 @@
 </div>
 </div>
 
+=======
+<p>data-binding works!</p>
+<div class="parentContainer">
+<div class="row">
+    <div class="col-4">
+        One way data binding from .TS to .HTML
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+<p>data-binding works!</p>
+
+
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+            <div class="col-4 bg-success">
+                interpolation
+                <h4>{{courseName}}</h4>
+                <div>{{inputType}}</div>
+                <input type="text" value={{courseName}} placeholder="Enter Name"/>
+                <input type={{inputType.radio}}/>
+                <input type={{inputType.checkbox}}/>
+                
+            </div>
+         
+        </div>
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+
+<div [ngClass]="allClasses">
+    <h4 [class.bg-danger]="allClasses['bg-danger']">Hey Ashish!</h4>  
+</div>
+<div [ngClass]="{'bg-danger': allClasses['bg-danger']}">
+    <h4>Hey Ashish!</h4>!
+</div>
+
+
+<div>
+    <input [type]="inputType.radio">
+    <input [type]="inputType.checkbox">
+    <input [type]="inputType.text">
+</div>
+
+
+<button 
+  [ngClass]="{
+    'btn-primary': isPrimary,
+    'btn-secondary': !isPrimary,
+    'btn-disabled': isDisabled,
+    'btn-lg': isLarge
+  }"
+  (click)="toggleClass()">
+  Toggle Button Style
+</button>
+
+
+<button class="btn btn-success" (click)='showAlert("Hello, Ashish")'>Alert</button>
+<span (click)="showAlert('this is from Span')">Click Me</span>
+
+<button class="btn" (click)="changeCourseName()">change Course</button>
+
+
+<div class="col-4">
+    <input type="text" [(ngModel)]="courseName" > - {{courseName}}
+</div>
+
+
+<div class="col-5">
+    <textarea name="essay" id="essay" [(ngModel)]='essay' placeholder="write here and see">{{essay}}</textarea>
+    <h1>{{essay}}</h1>
+    <input type="text" value="{{essay}}" />
+</div>
+
+<div class="col-6">
+    <select [(ngModel)]="selectedValue" > <!-- Bind to selectedValue -->
+        <option value="{{selectedValue}}" disabled>{{selectedValue}}</option> <!-- Default option -->
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+        <option value="{{essay}}">{{essay}}</option> <!-- Display essay option -->
+        <option value="{{courseName}}">{{courseName}}</option> <!-- Display course name -->
+    </select>
+</div>
+
+<p>Selected Value: {{ selectedValue }}</p> <!-- Display the currently selected value -->
+
+
+<div class="col">
+    <input type="checkbox" [(ngModel)]="isIndian" placeholder="isIndian">
+</div>
+
+
+<div class="col-8">
+    <h2 style="color: red;">{{firstName()}}</h2>
+</div>
+
+
+<div >
+    <button class="btn btn-primary" (click)="hideAndShow()">{{isButtonVisible}}</button>
+    <article>It's not that it hides or shows the element. 
+        <br>
+        Rather it removes it from it entirely from the DOM and then puts it back in their again.
+    </article>
+    <h6 *ngIf="isVisible" style="color: green">Hey I'm Visible now</h6>
+</div>
+
+
+<div>
+    <div class="header">
+        <h1>Comparison Component</h1>
+    </div>
+    
+    <input type="text" class="left col-8" placeholder="Input-1" [(ngModel)]="num1">
+    <input type="text" class="right col-8" placeholder="Input-2" [(ngModel)]="num2">
+  
+</div>
+
+
+<div class="dynamicText" *ngIf="num1 == num2">
+    <h3>Here is the magic.</h3>
+</div>
+
+
+
+<div class="checkboxInput">
+    <input type="checkbox" value="true" [(ngModel)]="isChecked" onclick="hideShowCheckbox()" >
+</div>
+<div class="checkboxMagic" *ngIf="isChecked == true">
+    <h4>This is will be hidden or shown based on checkbox input</h4>
+</div>
+
+
+<div class="selectInput">
+    <select [(ngModel)]="selectedCountry">
+        <option value="">select</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+    </select>
+</div>
+
+<div class="basedOnOption" *ngIf="selectedCountry == 'USA'">
+    <h4>If selected USA, only then this text will be visible</h4>
+</div>
+
+<div class="selectCity">
+    <select name="" id="">
+        
+        <option select>Select</option>
+        @for(city of cityArray; track city){
+            <option>{{city}}</option>
+        }@empty {
+           <p>List is empty</p>
+        }
+    </select>
+  
+</div>
+
+<div [class]="borderClasses">
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Roll Number</th>
+                <th>Student Id</th>
+                <th>Present</th>
+                <th>Marks</th>
+            </thead>
+            <tbody>
+                @for (student of studentList; track student.studId){
+                    <tr >
+                        <td>{{student.name}}</td>
+                        <td>{{student.age}}</td>
+                        <td>{{student.rollNum}}</td>
+                        <td>{{student.studId}}</td>
+                        <td [style]="{'background-color': student.isActive ? 'green' : 'red','color': 'white'}">{{student.isActive ? "Present" : "Absent"}}</td>
+                        <td>{{student.marks}}%</td>
+
+                    </tr>
+                }
+               
+            </tbody>
+        </table>
+
+        <button class="btnRed" (click)="changeRed()">Border Red</button>
+        <button class="btnBlue" (click)="changeBlue()">Border Blue</button>
+        <button class="btnGreen" (click)="changeGreen()">Border Green</button>
+</div>
+
+<div class="customCss">
+    <div [style]="customStyle">
+        Hello, World
+    </div>
+</div>
+</div>
+
+>>>>>>> master
