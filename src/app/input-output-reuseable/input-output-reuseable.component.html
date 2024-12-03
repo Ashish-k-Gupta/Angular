@@ -1,0 +1,3 @@
+<div class="alert" [ngClass]="{'alert-warning': alertType == 'Warning', 'alert-dark': alertType == 'Dark','alert-success': alertType == 'Success','alert-primary': alertType == 'Primary','alert-secondary': alertType == 'Secondary','alert-info': alertType == 'Info','alert-danger': alertType == 'Error', }">
+    <strong>{{alertType+ "! " }}</strong>{{message}}
+</div>

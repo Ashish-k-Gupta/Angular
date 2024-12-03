@@ -4,6 +4,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { ServiceService } from '../service.service';
 import { DepartmentService } from '../service/department.service';
+import { InputOutputReuseableComponent } from "../input-output-reuseable/input-output-reuseable.component";
 
 
 interface User {
@@ -22,7 +23,7 @@ interface NewDept{
 @Component({
   selector: 'app-crud-apis',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, JsonPipe],
+  imports: [FormsModule, ReactiveFormsModule, JsonPipe, InputOutputReuseableComponent],
   templateUrl: './crud-apis.component.html',
   styleUrl: './crud-apis.component.css'
 })
@@ -49,6 +50,7 @@ export class CrudAPISComponent implements OnInit {
       email: new FormControl('', Validators.email, ),
       password: new FormControl('', Validators.pattern(this.regex))
     })
+
   }
   
 
@@ -107,9 +109,9 @@ addUserToList() {
     getYtData(){
       this.deptSrv.getDeptDataYt().subscribe((res:any) =>{
         this.deptList = res.data;
-        console.log(this.deptList)
+        // console.log(this.deptList)
         for(const item of res.data){
-          console.log(item.departmentName)
+          // console.log(item.departmentName)
         }
       })
     }
@@ -133,7 +135,5 @@ addUserToList() {
         }
       })
     }
-
-
 
 }

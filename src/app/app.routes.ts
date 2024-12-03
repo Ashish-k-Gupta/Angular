@@ -6,6 +6,7 @@ import { RoutingComponent } from './routing/routing.component';
 import { SwitchCaseComponent } from './switch-case/switch-case.component';
 import { CrudAPISComponent } from './crud-apis/crud-apis.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { InputOutputReuseableComponent } from './input-output-reuseable/input-output-reuseable.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path: 'pipe',
         component: PipeComponent
+    },
+    {
+        path: 'inputOutput',
+        component: InputOutputReuseableComponent
     },
 ];
