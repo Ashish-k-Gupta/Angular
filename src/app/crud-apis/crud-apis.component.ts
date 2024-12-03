@@ -13,12 +13,11 @@ interface User {
 }
 
 interface NewDept{
-  departmentId?: number;
-  departmentName: string;
-  departmentLogo: string;
+  departmentId?: any;
+  departmentName: any;
+  departmentLogo: any;
 
 }
-
 
 @Component({
   selector: 'app-crud-apis',
@@ -31,6 +30,7 @@ interface NewDept{
 
 
 export class CrudAPISComponent implements OnInit {
+
   newUser: FormGroup;
   userList: User[] =[];
 
@@ -38,7 +38,6 @@ export class CrudAPISComponent implements OnInit {
 
   newDeptForm!: FormGroup;
   deptList: any[] = [];
-  newDept: NewDept[] = [];
 
   regex: RegExp = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;  // Correct regex
 
@@ -50,16 +49,10 @@ export class CrudAPISComponent implements OnInit {
       email: new FormControl('', Validators.email, ),
       password: new FormControl('', Validators.pattern(this.regex))
     })
-
-   
-
-
   }
   
 
   ngOnInit(): void {
-  
-
     this.newDeptForm = this.fb.group({
       departmentId: [null, Validators.required],
       departmentName: ['', Validators.required],
@@ -92,18 +85,16 @@ addUserToList() {
     this.api.postRequest('country', {name:"india"}).subscribe({
       next: (res) => {
         console.log("country add data",res)
-        // this.userList.push(res)
+        this.userList.push(res)
         // this.getUserList()
-        // alert(`${this.newUser.get('name')?.value} Added Successfully`);
-        // this.userList.push(res);
-        // this.newUser.reset(); // Reset the form after successful submission
+        alert(`${this.newUser.get('name')?.value} Added Successfully`);
+        this.newUser.reset(); 
       },
       error: (err: any) => {
         console.error('Error adding user', err);
       }
     });
   } else {
-    // Mark all fields as touched to show validation errors
     Object.keys(this.newUser.controls).forEach(field => {
       const control = this.newUser.get(field);
       control?.markAsTouched();
@@ -113,32 +104,36 @@ addUserToList() {
 
 
 
-getYtData(){
-  this.deptSrv.getDeptDataYt().subscribe((res:any) =>{
-    this.deptList = res.data;
-    console.log(this.deptList)
-    for(const item of res.data){
-      console.log(item.departmentName)
+    getYtData(){
+      this.deptSrv.getDeptDataYt().subscribe((res:any) =>{
+        this.deptList = res.data;
+        console.log(this.deptList)
+        for(const item of res.data){
+          console.log(item.departmentName)
+        }
+      })
     }
-  })
+
+
+    addDept():void{
+
+      if(this.newDeptForm.invalid){
+        alert('Please fill valid data.')
+        return
+      }
+      this.deptSrv.addDepDataYt(this.newDeptForm.value).subscribe({
+        next: (res) =>{
+          console.log("Department Added successfully:", res);
+          // alert("Department added successfully!");
+          // this.getYtData();
+        },
+        error: (err) => {
+          console.error("Error adding department:", err);
+          alert("There was an error adding the department. Please try again later.");
+        }
+      })
+    }
+
+
+
 }
-
-addDept(){
-  this.deptSrv.addDepDataYt(this.newDeptForm).subscribe()
-}
-
-
-}
-
-// next: (res) =>{
-//   console.log("country list data",res.list);
-//   let namesArrY = [];
-//   for (const item of res.list){
-//     namesArrY.push(item.name)
-//   }
-//   this.userList = namesArrY;
-// },
-// error: (err) =>{
-//   console.log('Error Fetching users', err)
-// }
-// })

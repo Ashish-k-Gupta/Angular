@@ -39,20 +39,20 @@
 <div class="youTubeApiContianer">
 
     <button (click)="getYtData()">Get YT Data</button>
-    <p>{{deptList | json}}</p>
-    <!-- @for( item of deptList; track item.departmentId){
+    <p>{{deptList}}</p>
+    @for( item of deptList; track item.departmentId){
         <p>Here: {{item.departmentName}}</p>
-    } -->
+    }
 
 </div>
 
 <div class="addDeptContainer">
-    <form >
+    <form [formGroup]="newDeptForm">
         <label for="deptId">Dept. Name
             <input type="number" placeholder="Enter Dept. ID" name="deptId" formControlName="departmentId" value="0">
         </label>
         <label for="deptName">Dept. Name
-            <input type="text" placeholder="Enter User Name" name="deptName" formControlName="departmentName">
+            <input type="text" placeholder="Enter Department Name" name="deptName" formControlName="departmentName">
         </label>
         <label for="deptLogo">Dept. Name
             <input type="text" placeholder="Enter Dept. Logo" name="deptLogo" formControlName="departmentLogo">
@@ -61,3 +61,5 @@
 
     <button (click)="addDept()">Add Department</button>
 </div>
+
+
