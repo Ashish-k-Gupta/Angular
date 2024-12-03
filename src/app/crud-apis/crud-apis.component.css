@@ -1,0 +1,19 @@
+small{
+    color: red;
+}
+
+.postData > form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+input{
+    margin: 5px;
+}
+
+button{
+    width: 5%;
+    background-color: rgb(99, 165, 252);
+    color: black;
+}

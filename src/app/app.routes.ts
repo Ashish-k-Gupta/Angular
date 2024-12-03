@@ -4,6 +4,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { EmployeeListComponent } from './Components/employee-list/employee-list.component';
 import { RoutingComponent } from './routing/routing.component';
 import { SwitchCaseComponent } from './switch-case/switch-case.component';
+import { CrudAPISComponent } from './crud-apis/crud-apis.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +27,13 @@ export const routes: Routes = [
     {
         path: 'swtich-case',
         component: SwitchCaseComponent
+    },
+    {
+        path: 'crud-apis',
+        component: CrudAPISComponent
+    },
+    {
+        path: 'pipe',
+        component: PipeComponent
     },
 ];

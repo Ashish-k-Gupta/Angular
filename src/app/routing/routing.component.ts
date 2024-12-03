@@ -24,5 +24,8 @@ export class RoutingComponent {
   routeToEmpList(){
     this.router.navigateByUrl("emp-list")
   }
+  routeToCrudApis(){
+    this.router.navigateByUrl('crud-apis')
+  }
 
 }
