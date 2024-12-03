@@ -1,0 +1,70 @@
+<p>crud-apis works!</p>
+
+<div class="getData">
+    <h3>Get Data (Get APIs)</h3>
+    <p>Users:{{this.userList | json}}</p>
+
+    <button (click)="getUserList()">Get Users</button>
+</div>
+
+
+
+<div class="postData">
+    <h3>Add New User here</h3>
+
+    <form [formGroup]="newUser" (ngSubmit)="addUserToList()">
+        <label for="userName">Username
+            <input type="text" placeholder="Enter User Name" name="userName" formControlName="name">
+                @if(newUser.controls['name'].touched && newUser.controls['name'].errors?.['required']){
+                    <small>*Username required</small>
+                }
+        </label>
+        <label for="email">Email
+            <input type="text" placeholder="Enter your Email" name="email" formControlName="email">
+                @if(newUser.controls['email'].touched && newUser.controls['email'].errors?.['email']){
+                    <small>*Must contain Valid email</small>
+                }
+        </label>
+        <label for="password">Password
+            <input type="text" placeholder="Enter your password" name="password" formControlName="password">
+                @if(newUser.controls['password'].touched && newUser.controls['password'].errors?.['pattern']){
+                    <small>*Password must be at least 8 characters long, contain at least one number and one special character</small>
+
+                }
+        </label>
+        <button type="submit" [disabled]="newUser.invalid">Add User</button>
+    </form>
+
+
+<div class="youTubeApiContianer">
+
+    <button (click)="getYtData()">Get YT Data</button>
+    <p>{{deptList}}</p>
+    @for( item of deptList; track item.departmentId){
+        <p>Here: {{item.departmentName}}</p>
+    }
+
+</div>
+
+<div class="addDeptContainer">
+    <form [formGroup]="newDeptForm">
+        <label for="deptId">Dept. Name
+            <input type="number" placeholder="Enter Dept. ID" name="deptId" formControlName="departmentId" value="0">
+        </label>
+        <label for="deptName">Dept. Name
+            <input type="text" placeholder="Enter Department Name" name="deptName" formControlName="departmentName">
+        </label>
+        <label for="deptLogo">Dept. Name
+            <input type="text" placeholder="Enter Dept. Logo" name="deptLogo" formControlName="departmentLogo">
+        </label>
+    </form>
+
+    <button (click)="addDept()">Add Department</button>
+</div>
+
+
+
+
+<app-input-output-reuseable [message]="'This is warning'" [alertType]="'Success!'"/>
+<app-input-output-reuseable [message]="'This is warning'" [alertType]="'Success!'"/>
+<app-input-output-reuseable [message]="'This is warning'" [alertType]="'Error!'"/>
