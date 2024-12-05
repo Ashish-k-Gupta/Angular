@@ -1,0 +1,38 @@
+<div class="mt-2 p-2 bg0secondary text-white rounded">
+    <h1>ng-template</h1>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3">
+        <div class="bg-primary p-3" *ngIf="isUserLoggedIN; else unauthorized">
+            {{loggerUserName}}
+        </div>
+        <ng-template #unauthorized>
+            <div class="bg-primary p-3">
+                <p>Unauthorize for this info... Please check with admin</p>
+            </div>
+        </ng-template>
+    </div>
+    <div class="col-4">
+        <ng-template #dynamicTemplate>
+            <p>Hi from nowhere....</p>
+        </ng-template>
+    </div>
+    <div class="col-4">
+        <div #dynamicContainer>
+
+        </div>
+    </div>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        
+    </div>
+    <div class="col-3 text-center">
+        
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="loadTemplate()">Load Content</button>
+    </div>
+</div>

@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { TemplateFormValidationComponent } from "./template-form-validation/template-form-validation.component";
 import { InputOutputReuseableComponent } from "./input-output-reuseable/input-output-reuseable.component";
 import { MyButtonComponent } from "./my-button/my-button.component";
+import { LifeCycleEventComponent } from "./life-cycle-event/life-cycle-event.component";
+import { NgTemplateComponent } from "./ng-template/ng-template.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   // imports: [RouterOutlet, EmployeeListComponent, AddEmployeeComponent, DataBindingComponent],
-  imports: [RouterOutlet, CommonModule, RouterModule, TemplateFormValidationComponent, InputOutputReuseableComponent, MyButtonComponent],
+  imports: [RouterOutlet, CommonModule, RouterModule, TemplateFormValidationComponent, InputOutputReuseableComponent, MyButtonComponent, LifeCycleEventComponent, NgTemplateComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

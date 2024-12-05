@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+# Angular Life Cycle Hooks
+
+## ngOnInit:
+Get's called on once in the whole life cycle event of a component. It get's called once the all input values has been intialized, but not rendered on the UI screen. (After Intiailizing the Input Value but before it renderes on the screen. )
+
+
+## ngOnChanges 
+In Angular, the ngOnChanges lifecycle hook is called whenever any data-bound input property of a component or directive changes. This hook is part of Angular's component lifecycle and provides a way to react to changes in input properties that are passed from a parent component to a child component.
+
+When does ngOnChanges get called?
+ 1- When the input properties change:
+ 2- After the component is initialized:
+
+ When is ngOnChanges NOT called?
+ 1-   Direct modification of component properties:
+ 2-   Changes within a child component
