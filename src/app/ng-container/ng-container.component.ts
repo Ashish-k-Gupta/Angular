@@ -15,11 +15,16 @@ export class NgContainerComponent {
 
   http = inject(HttpClient);
   userList: any[] = [];
+  isUserListFetched: boolean = false;
 
+  
   getUser(){
+    this.isUserListFetched = true;
     this.http.get('https://jsonplaceholder.typicode.com/users').subscribe((res:any)=>{
       this.userList = res;
+      this.isUserListFetched = false;
     })
   }
 
 }
+

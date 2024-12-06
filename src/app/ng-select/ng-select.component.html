@@ -1,0 +1,30 @@
+<h3>Ng-select Works</h3>
+
+<!-- <ng-select [(ngModel)]="selectedCar">
+    @for (car of carList; track car.id) {
+        <ng-option [value]="car.id">{{car.name}} {{car.icon}}
+        </ng-option>
+    }
+    
+</ng-select> -->
+
+<!--Using items input-->
+<ng-select [items]="carList" 
+           bindLabel="name" 
+           bindValue="id" 
+           [(ngModel)]="selectedCar"
+           (click)="handleChange($event)"
+           >
+           <ng-template ng-option-tmp let-item="item">
+            <span [title]="item.name">{{item.name +" "+ item.icon}}</span>
+        </ng-template>
+
+           <ng-template  ng-label-tmp let-item="item">
+            <span [ngStyle]="{'color': classForColor}" [title]="item.name">{{item.name +" "+ item.icon || ''}}</span>
+        </ng-template>
+</ng-select>
+
+<ng-template #myTem>
+    <span>{{car.icon}}</span>
+</ng-template>
+  
