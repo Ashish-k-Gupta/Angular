@@ -8,12 +8,14 @@ import { LifeCycleEventComponent } from "./life-cycle-event/life-cycle-event.com
 import { NgTemplateComponent } from "./ng-template/ng-template.component";
 import { NgContainerComponent } from "./ng-container/ng-container.component";
 import { NgSelectComponent } from "./ng-select/ng-select.component";
+import { ViewchildComponent } from "./viewchild/viewchild.component";
+import { DecoratorsComponent } from "./decorators/decorators.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   // imports: [RouterOutlet, EmployeeListComponent, AddEmployeeComponent, DataBindingComponent],
-  imports: [RouterOutlet, CommonModule, RouterModule, TemplateFormValidationComponent, InputOutputReuseableComponent, MyButtonComponent, LifeCycleEventComponent, NgTemplateComponent, NgContainerComponent, NgSelectComponent],
+  imports: [RouterOutlet, CommonModule, RouterModule, TemplateFormValidationComponent, InputOutputReuseableComponent, MyButtonComponent, NgTemplateComponent, NgContainerComponent, NgSelectComponent, ViewchildComponent, LifeCycleEventComponent, DecoratorsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
