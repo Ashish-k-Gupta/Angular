@@ -1,0 +1,24 @@
+<div class="parent">
+
+<div class="box">
+    <span class="borderLine"></span>
+    <form action="">
+        <h2>Sign in</h2>
+        <div class="inputBox">
+            <input type="text" required [(ngModel)] = 'userObj.username'name="username"      >
+            <span>Username</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" required [(ngModel)] = 'userObj.userPassword' name="userPassword">
+            <span>Password</span>
+            <i></i>
+        </div>
+        <div class="links">
+            <a href="#">Forgot Password</a>
+            <a href="#">Signup</a>
+        </div>
+        <button class="btn btn-success" (click)="login()">Login</button>
+    </form>
+</div>
+</div>
