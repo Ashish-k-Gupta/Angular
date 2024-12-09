@@ -1,0 +1,19 @@
+
+<div class="parent">
+
+<div class="login-container">
+    <h1>Login Using API</h1>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required [(ngModel)]="apiUserObj.email">
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required [(ngModel)]="apiUserObj.password">
+      </div>
+      <button type="submit" (click)="apiLogin()">Login</button>
+    </form>
+  </div>
+</div>
+  
