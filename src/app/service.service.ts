@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'

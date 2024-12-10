@@ -10,17 +10,20 @@ import { InputOutputReuseableComponent } from './input-output-reuseable/input-ou
 // import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginUsingAPIComponent } from './login-using-api/login-using-api.component';
+import { authGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
+import { SignalComponent } from './signal/signal.component';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'loginapi',
+        redirectTo: 'login',
         pathMatch: 'full'
     },
 
     {
-        path: 'loginapi',
-        component: LoginUsingAPIComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: '',
@@ -30,35 +33,48 @@ export const routes: Routes = [
 
             {
                 path: 'add-emp',
-                component: AddEmployeeComponent
+                component: AddEmployeeComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'emp-list',
-                component: EmployeeListComponent
+                component: EmployeeListComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'data-binding',
-                component: DataBindingComponent
+                component: DataBindingComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'routing-examples',
-                component: RoutingComponent
+                component: RoutingComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'swtich-case',
-                component: SwitchCaseComponent
+                component: SwitchCaseComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'crud-apis',
-                component: CrudAPISComponent
+                component: CrudAPISComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'pipe',
-                component: PipeComponent
+                component: PipeComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'inputOutput',
-                component: InputOutputReuseableComponent
+                component: InputOutputReuseableComponent,
+                canActivate: [authGuard]
+            },
+            {
+                path: 'signal',
+                component: SignalComponent,
+                canActivate: [authGuard]
             }
         ]
 

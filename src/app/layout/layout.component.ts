@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { DecoratorsComponent } from "../decorators/decorators.component";
 import { ViewchildComponent } from "../viewchild/viewchild.component";
 import { NgSelectComponent } from "../ng-select/ng-select.component";
@@ -13,7 +13,7 @@ import { TemplateFormValidationComponent } from "../template-form-validation/tem
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterOutlet, DecoratorsComponent, ViewchildComponent, NgSelectComponent, NgContainerComponent, NgTemplateComponent, LifeCycleEventComponent, MyButtonComponent, InputOutputReuseableComponent, TemplateFormValidationComponent],
+  imports: [RouterOutlet, RouterLink,DecoratorsComponent, ViewchildComponent, NgSelectComponent, NgContainerComponent, NgTemplateComponent, LifeCycleEventComponent, MyButtonComponent, InputOutputReuseableComponent, TemplateFormValidationComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })

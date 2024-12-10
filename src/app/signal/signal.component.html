@@ -1,0 +1,39 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>signal</h1>
+    <p>create signal, update, display</p>
+</div>
+
+
+<div class="row">
+    <div class="col-3">
+        {{firstName()}}
+    </div>
+    <div class="col-3">
+        {{lastName()}}
+    </div>
+    <div class="col-3">
+        {{rollNumber()}}
+    </div>
+    <div class="col-3">
+        {{present()}}
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="addRollNumber()">+Roll-Number</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-danger" (click)="changeName()">Change Name</button>
+    </div>
+    
+    <h1>{{fullName()}}</h1>
+    
+    <div class="col-1">
+        <button class="btn btn-info" (click)="changeFirstName()">Change Name</button>
+    </div>
+    <div class="col-1">
+        <button class="btn btn-primary" (click)="changeLastName()">Change Name</button>
+    </div>
+
+    <textarea name="lesson" id="lesson" placeholder="Write About what you have learnt today" [(ngModel)]="todayLesson().value" (change)="handleChange($event)" [value]="todayLesson()?.value"></textarea>
+
+    <article class="container" >Here: {{todayLesson().value}}</article>
+</div>
